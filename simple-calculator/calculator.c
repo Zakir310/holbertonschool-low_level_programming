@@ -1,16 +1,19 @@
 #include <stdio.h>
 
 /**
- * main - affiche le menu en boucle, effectue l'addition (1),
- * la soustraction (2) et la multiplication (3)
+ * main - calculatrice : addition (1), soustraction (2), multiplication (3),
+ * division (4) ; 0 quitte
+ *
+ * Note : les nombres sont des décimaux (double), donc 10 / 4 = 2.5.
+ * Une division par zéro affiche "Error: division by zero".
  *
  * Return: 0 (succès)
  */
 int main(void)
 {
     int choice;
-    int a;
-    int b;
+    double a;
+    double b;
 
     printf("Simple Calculator\n");
     while (1)
@@ -27,31 +30,27 @@ int main(void)
             printf("Bye!\n");
             break;
         }
+        if (choice >= 1 && choice <= 4)
+        {
+            printf("A: ");
+            scanf("%lf", &a);
+            printf("B: ");
+            scanf("%lf", &b);
+        }
         if (choice == 1)
-        {
-            printf("A: ");
-            scanf("%d", &a);
-            printf("B: ");
-            scanf("%d", &b);
-            printf("Result: %d\n", a + b);
-        }
+            printf("Result: %g\n", a + b);
         else if (choice == 2)
-        {
-            printf("A: ");
-            scanf("%d", &a);
-            printf("B: ");
-            scanf("%d", &b);
-            printf("Result: %d\n", a - b);
-        }
+            printf("Result: %g\n", a - b);
         else if (choice == 3)
+            printf("Result: %g\n", a * b);
+        else if (choice == 4)
         {
-            printf("A: ");
-            scanf("%d", &a);
-            printf("B: ");
-            scanf("%d", &b);
-            printf("Result: %d\n", a * b);
+            if (b == 0)
+                printf("Error: division by zero\n");
+            else
+                printf("Result: %g\n", a / b);
         }
-        else if (choice < 0 || choice > 4)
+        else
             printf("Invalid choice\n");
     }
     return (0);
