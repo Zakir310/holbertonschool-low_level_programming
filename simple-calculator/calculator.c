@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - affiche le menu en boucle et effectue l'addition pour le choix 1
+ * main - affiche le menu en boucle, effectue l'addition (1) et la soustraction (2)
  *
  * Return: 0 (succès)
  */
@@ -33,6 +33,14 @@ int main(void)
             printf("B: ");
             scanf("%d", &b);
             printf("Result: %d\n", a + b);
+        }
+        else if (choice == 2)
+        {
+            printf("A: ");
+            scanf("%d", &a);
+            printf("B: ");
+            scanf("%d", &b);
+            printf("Result: %d\n", a - b);
         }
         else if (choice < 0 || choice > 4)
             printf("Invalid choice\n");
