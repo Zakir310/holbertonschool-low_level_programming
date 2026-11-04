@@ -1,21 +1,18 @@
-Objectif
-Assurez-vous que le programme se compile et s'exécute.
+#include <stdio.h>
 
-Exigences
-Imprimez une ligne de bienvenue.
-Afficher un menu.
-Autoriser la fermeture avec option 0.
-Résultat attendu (exemple)
-Simple Calculator
-1) Add
-2) Subtract
-3) Multiply
-4) Divide
-0) Quit
-Choice: 0
-Bye!
-Dépôt :
+int main(void)
+{
+    int choice;
 
-Dépôt GitHub : holbertonschool-low_level_programming
-Annuaire : simple-calculator
-Fichier : calculator.c
+    printf("Simple Calculator\n");
+    printf("1) Add\n");
+    printf("2) Subtract\n");
+    printf("3) Multiply\n");
+    printf("4) Divide\n");
+    printf("0) Quit\n");
+    printf("Choice: ");
+    scanf("%d", &choice);
+    if (choice == 0)
+        printf("Bye!\n");
+    return (0);
+}
