@@ -1,4 +1,4 @@
-k#include <stdio.h>
+#include <stdio.h>
 
 /**
  * main - affiche le menu en boucle, effectue l'addition (1),
