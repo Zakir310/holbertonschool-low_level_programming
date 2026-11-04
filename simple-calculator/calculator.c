@@ -1,13 +1,15 @@
-#include <stdio.h>
+k#include <stdio.h>
 
 /**
- * main - affiche le menu en boucle jusqu'à ce que l'utilisateur quitte
+ * main - affiche le menu en boucle et effectue l'addition pour le choix 1
  *
  * Return: 0 (succès)
  */
 int main(void)
 {
     int choice;
+    int a;
+    int b;
 
     printf("Simple Calculator\n");
     while (1)
@@ -24,7 +26,15 @@ int main(void)
             printf("Bye!\n");
             break;
         }
-        if (choice < 1 || choice > 4)
+        if (choice == 1)
+        {
+            printf("A: ");
+            scanf("%d", &a);
+            printf("B: ");
+            scanf("%d", &b);
+            printf("Result: %d\n", a + b);
+        }
+        else if (choice < 0 || choice > 4)
             printf("Invalid choice\n");
     }
     return (0);
