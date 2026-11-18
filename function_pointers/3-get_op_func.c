@@ -2,9 +2,9 @@
 
 /**
  * get_op_func - selects the function matching the operator
- * @s: the operator passed as argument to the program
+ * @s: the operator given to the program
  *
- * Return: pointer to the matching function, or NULL if no match
+ * Return: pointer to the function, or NULL if no match
  */
 int (*get_op_func(char *s))(int, int)
 {
@@ -19,12 +19,7 @@ int (*get_op_func(char *s))(int, int)
 	int i;
 
 	i = 0;
-	while (ops[i].op != NULL)
-	{
-		if (*(ops[i].op) == *s && s[1] == '\0')
-			return (ops[i].f);
+	while (ops[i].op != NULL && *(ops[i].op) != *s)
 		i++;
-	}
-
-	return (NULL);
+	return (ops[i].f);
 }
