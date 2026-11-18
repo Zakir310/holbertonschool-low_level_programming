@@ -2,26 +2,33 @@
 #include <stdlib.h>
 
 /**
- * main - adds two numbers passed as arguments
- * @argc: number of arguments (program name included)
+ * main - adds positive numbers
+ * @argc: number of arguments
  * @argv: array of arguments
  *
- * Return: 0 (Success)
+ * Return: 0 (Success), 1 (Error)
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
+	int i = 1;
+	int j;
+	int sum = 0;
 
-	if (argc != 3)
+	while (i < argc)
 	{
-		printf("Usage: %s <number1> <number2>\n", argv[0]);
-		return (1);
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			if (argv[i][j] < '0' || argv[i][j] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
+			j++;
+		}
+		sum = sum + atoi(argv[i]);
+		i++;
 	}
-
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
-	result = num1 + num2;
-
-	printf("%d\n", result);
+	printf("%d\n", sum);
 	return (0);
 }
